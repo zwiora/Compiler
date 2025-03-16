@@ -1,0 +1,16 @@
+# błąd: niewłaściwe użycie tablicy w linii 5
+PROCEDURE pa(T a, b) IS
+ c[5],d
+IN
+  c:=a;
+  a:=c+d;
+END
+
+PROGRAM IS
+ a[10],b
+IN
+  READ b;
+  pa(a,b);
+  WRITE a[b];
+END
+

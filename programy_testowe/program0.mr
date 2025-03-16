@@ -1,0 +1,37 @@
+# prosta translacja z użyciem pamięci
+# n -> P0, p -> P1
+READ
+RST b
+STORE b
+RST b
+LOAD b
+SHR a
+SHL a
+RST b
+INC b
+STORE b
+RST b
+LOAD b
+PUT c
+RST b
+INC b
+LOAD b
+PUT d
+GET c
+SUB d
+JZERO 24
+RST a
+INC a
+WRITE
+JUMP 26
+RST a
+WRITE
+RST b
+LOAD b
+SHR a
+RST b
+STORE b
+RST b
+LOAD b
+JPOS 3
+HALT

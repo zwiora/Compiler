@@ -1,0 +1,129 @@
+JUMP 37
+RST b	# gcd
+LOAD b	# x:=a
+LOAD a
+PUT c
+INC b
+LOAD b	# y:=b
+LOAD a
+PUT d
+GET d	# while
+JZERO 29	# not y>0
+GET c	# if x>=y
+INC a
+SUB d
+JZERO 19 
+GET c	# then
+SUB d
+PUT c
+JUMP 28
+GET c	# else
+ADD d
+PUT c
+GET c
+SUB d
+PUT d
+GET c
+SUB d
+PUT c
+JUMP 9	# endwhile
+INC b
+LOAD b
+PUT e
+GET c
+STORE e
+INC b	# return
+LOAD b
+JUMPR a	# end gcd
+RST b	# program
+INC b
+SHL b
+SHL b
+READ
+STORE b
+INC b
+READ
+STORE b
+INC b
+READ
+STORE b
+INC b
+READ 
+STORE b
+RST a	# call gcd(a,b,x)
+INC a	
+SHL a
+SHL a
+RST b
+STORE b
+INC a
+INC b
+STORE b	
+INC a
+INC a
+INC a
+INC b
+STORE b
+INC b	# return set
+RST a
+INC a
+SHL a
+SHL a
+STRK c
+ADD c
+STORE b
+JUMP 1	# end call
+RST a	# call gcd(c,d,y)
+INC a	
+SHL a
+INC a
+SHL a
+RST b
+STORE b
+INC a
+INC b
+STORE b	
+INC a
+INC a
+INC b
+STORE b
+INC b	# return set
+RST a
+INC a
+SHL a
+SHL a
+STRK c
+ADD c
+STORE b
+JUMP 1	# end call
+RST a	# call gcd(x,y,z)
+INC a	
+SHL a
+SHL a
+SHL a
+RST b
+STORE b
+INC a
+INC b
+STORE b	
+INC a
+INC b
+STORE b
+INC b	# return set
+RST a
+INC a
+SHL a
+SHL a
+STRK c
+ADD c
+STORE b
+JUMP 1	# end call
+RST b	# write z
+INC b
+SHL b
+SHL b
+INC b
+SHL b
+LOAD b
+WRITE
+HALT

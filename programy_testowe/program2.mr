@@ -1,0 +1,168 @@
+JUMP 104
+RST b	# licz 
+LOAD b
+PUT d	# &s -> r_d
+INC b
+LOAD b	
+PUT e	# &n -> r_e
+RST a
+INC a
+INC a
+PUT f	# i=2 -> r_f
+RST a	# 1 -> h
+INC a
+PUT f
+GET e	# while i<=n
+PUT b
+LOAD b
+INC a
+SUB f
+JZERO 27	# not i<=n
+GET d	# s[i]:=1
+ADD f
+PUT b
+GET h
+STORE b
+INC f	# i:=i+1
+JUMP 14 # endwhile
+RST a
+INC a
+INC a
+PUT f	# i=2 -> r_f
+GET e	# while i<=n
+PUT b
+LOAD b
+INC a
+SUB f
+JZERO 62	# not i<=n
+GET d	# if s[i]>0
+ADD f
+PUT b
+LOAD b
+JZERO 60	# not s[i]>0
+GET f
+ADD f
+PUT g	# j=i+i -> r_g
+GET e	# while j<=n
+PUT b
+LOAD b
+INC a
+SUB g
+JZERO 60	# not j<=n
+GET d	# s[j]:=0
+ADD g
+PUT b
+RST a
+STORE b
+GET g	# j:=j+i
+ADD f
+PUT g
+JUMP 45	# endwhile
+INC f	# i:=i+1
+JUMP 31	# endwhile
+RST b	# return
+INC b
+SHL b
+SHL b
+LOAD b
+JUMPR a	# end licz
+RST b	# wypisz
+INC b
+SHL b
+SHL b
+INC b
+LOAD b
+PUT d	# &s -> r_d
+INC b
+LOAD b	
+PUT e	# &n -> r_e
+RST a
+INC a
+INC a
+PUT f	# i=2 -> r_f
+GET e	# while i<=n
+PUT b
+LOAD b
+INC a
+SUB f
+JZERO 97	# not i<=n
+GET d	# if s[i]>0
+ADD f
+PUT b
+LOAD b
+JZERO 95	# not s[i]>0
+GET f
+WRITE
+INC f	# i:=i+1
+JUMP 82
+RST b	# return
+INC b
+SHL b
+SHL b
+SHL b
+LOAD b
+JUMPR a	# end wypisz
+RST b	# program
+INC b
+SHL b
+SHL b
+SHL b
+INC b
+RST a	# 99
+INC a
+SHL a
+INC a
+SHL a
+SHL a
+SHL a
+SHL a
+INC a
+SHL a
+INC a
+STORE b	# n:=99
+RST c	# call licz
+GET b
+INC a
+STORE c
+INC c
+DEC a
+STORE c
+SHL c
+SHL c
+RST a	# 4
+INC a
+SHL a
+SHL a
+STRK d
+ADD d
+STORE c
+JUMP 1	# end call licz
+RST b	# call wypisz
+INC b
+SHL b
+SHL b
+SHL b
+INC b
+RST c	
+INC c
+SHL c
+SHL c
+INC c
+GET b
+INC a
+STORE c
+INC c
+DEC a
+STORE c
+INC c
+INC c
+RST a	# 4
+INC a
+SHL a
+SHL a
+STRK d
+ADD d
+STORE c
+JUMP 68	# end call wypisz
+HALT
+

@@ -1,0 +1,35 @@
+READ
+JZERO 33    # if a == 0
+PUT b
+READ
+JZERO 33    # if a == 0
+PUT c
+PUT e
+DEC e
+RST a
+PUT d
+GET b   # while c < b
+INC a   #
+SUB c   #
+JZERO 17#
+ADD c   #
+SHL c   #
+JUMP 11 # end while
+SHR c   # while c >= e
+GET c 
+SUB e
+JZERO 30 
+SHL d   # do
+GET b   # if c > b
+INC a   
+SUB c   
+JZERO 17# continue
+DEC a   # else
+PUT b
+INC d   # end if
+JUMP 17 # end while
+GET d
+WRITE
+GET b
+WRITE
+HALT

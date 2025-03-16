@@ -1,0 +1,16 @@
+# błąd: powtórne użycie identyfikatora a w linii 2
+PROCEDURE pa(T a, b) IS
+ c[5], a
+IN
+  d:=b;
+  a[d]:=c[d]+a[b];
+END
+
+PROGRAM IS
+ a[10],b
+IN
+  READ b;
+  pa(a,b);
+  WRITE a[b];
+END
+

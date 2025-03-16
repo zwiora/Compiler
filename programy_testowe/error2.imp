@@ -1,0 +1,15 @@
+# błąd: niezainicjowana zmienna d w linii 6
+PROCEDURE pa(T a, b) IS
+ c[5],d
+IN
+  c[b]:=b;
+  a[d]:=c[d];
+END
+
+PROGRAM IS
+ a[10],b
+IN
+  READ b;
+  pa(a,b);
+  WRITE a[b];
+END

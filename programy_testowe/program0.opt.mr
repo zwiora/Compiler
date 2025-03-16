@@ -1,0 +1,13 @@
+# kod zoptymalizowany
+READ
+PUT b
+SHR a
+SHL a
+PUT c
+GET b
+SUB c
+WRITE
+SHR b
+GET b
+JPOS 2
+HALT

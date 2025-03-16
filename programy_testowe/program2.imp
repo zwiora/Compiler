@@ -1,0 +1,38 @@
+PROCEDURE licz(T s, n) IS
+  i, j
+IN
+  i:=2;
+  WHILE i<=n DO
+    s[i]:=1;
+    i:=i+1;
+  ENDWHILE
+  i:=2;
+  WHILE i<=n DO
+    IF s[i]>0 THEN 
+      j:=i+i;
+      WHILE j<=n DO
+        s[j]:=0;
+        j:=j+i;
+      ENDWHILE
+    ENDIF
+    i:=i+1;
+  ENDWHILE
+END
+PROCEDURE wypisz(T s, n) IS
+  i
+IN
+  i:=2;
+  WHILE i<=n DO
+    IF s[i]>0 THEN
+      WRITE i;
+    ENDIF
+    i:=i+1;
+  ENDWHILE
+END
+PROGRAM IS
+  n, sito[100]
+IN
+  n:=99;
+  licz(sito,n);
+  wypisz(sito,n);
+END

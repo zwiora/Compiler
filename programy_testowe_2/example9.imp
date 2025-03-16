@@ -1,0 +1,35 @@
+# Kombinacje 2
+# ? 20
+# ? 9
+# > 167960
+
+PROCEDURE factorial(T s,n) IS
+  i,j
+IN
+  s[0]:=1;
+  i:=1;
+  j:=0;
+  WHILE i<=n DO
+    s[i]:=s[j]*i;
+    i:=i+1;
+    j:=j+1;
+  ENDWHILE
+END
+
+PROCEDURE bc(n,k,m) IS
+  s[100],p
+IN
+  factorial(s,n);
+  p:=n-k;
+  m:=s[n]/s[k];
+  m:=m/s[p];
+END
+
+PROGRAM IS
+    n,k,w
+IN
+    READ n;
+    READ k;
+    bc(n,k,w);
+    WRITE w;
+END

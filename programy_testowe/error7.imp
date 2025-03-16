@@ -1,0 +1,17 @@
+# błąd: niewłaściwe użycie procedudy pa w linii 6
+PROCEDURE pa(T a, b) IS
+ c[5], f
+IN
+  d:=b;
+  pa(c,d);
+  a[d]:=c[d]+a[b];
+END
+
+PROGRAM IS
+ a[10],b
+IN
+  READ b;
+  pa(a,b);
+  WRITE a[b];
+END
+

@@ -1,0 +1,34 @@
+READ
+JZERO 32    # if a == 0
+PUT b
+READ
+JZERO 32    # if a == 0
+PUT c
+SUB b
+JZERO 15
+RST a   # if c > b
+PUT f   #
+GET c   #
+PUT e   #
+GET b   #
+PUT d   #
+JUMP 20 #
+PUT f   # else if c <= b
+GET b   #
+PUT e   #
+GET c   #
+PUT d   # end if
+SHR d   # while d != 0
+SHL d   #
+SUB d   #
+JZERO 27#
+GET f   ## if d%2==1
+ADD e   ##
+PUT f   ## end if
+SHL e   #
+SHR d   #
+GET d   #
+JPOS 20 # end while
+GET f
+WRITE
+HALT 
